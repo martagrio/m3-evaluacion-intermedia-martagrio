@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Pokemon from './Pokemon';
+import './pokelist.css';
 
 class PokeList extends React.Component {
 	render() {
 		return(
-			<ul className="pokemons__list">
+			<ol className="pokemons__list">
 				<li className="pokemon">
 					{this.props.pokemons
 						.map((pokemon, id) => {
@@ -22,7 +23,7 @@ class PokeList extends React.Component {
 					 )	
 					}
 				</li>
-			</ul>
+			</ol>
 		);
 	}
 }
