@@ -7,14 +7,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-	
+		this.state = {
+			pokemons: pokemons
+		}
   }
-
   render() {
+		console.log(pokemons[0].url);
     return (
-      <div className="App">
-        <header className="App-header">
-        </header>
+      <div className="app">
+        <h1 className="app__title">Mi lista de pokemons</h1>
+				<PokeList pokemons = {this.state.pokemons} />
       </div>
     );
   }
