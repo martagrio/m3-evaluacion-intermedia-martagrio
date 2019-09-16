@@ -21,8 +21,10 @@
 }
 
 .card-pokemon__name {
+	margin: 0;
 	text-align: center;
 	border: 1px solid grey;
+	font-weight: normal;
 }
 
 .card-pokemon__type {
