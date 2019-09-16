@@ -10,21 +10,20 @@
 	align-items: center;
 	width: 120px;
 }
-.card-pokemon__types {
-	padding: 0;
-	display: flex;
-	color: white;
-}
-
-.card-pokemon__type {
-	padding: 3px;
-}
 
 .card-pokemon__name {
 	margin: 0;
 	text-align: center;
 	border: 1px solid grey;
 	font-weight: normal;
+	width: 100%;
+}
+
+.card-pokemon__types {
+	padding: 0;
+	display: flex;
+	color: white;
+	align-self: left;
 }
 
 .card-pokemon__type {
@@ -32,4 +31,5 @@
 	background-color: grey;
 	border-radius: 3px;
 	margin: 5px;
+	padding: 3px;
 }
