@@ -11,13 +11,13 @@ class PokeList extends React.Component {
 					{this.props.pokemons
 						.map((pokemon, id) => {
 							return (
-								<li className="pokemon" key={id}>
+								<div className="pokemon" key={id}>
 									<Pokemon
 										pic = {pokemon.url}
 										name = {pokemon.name}
 										type = {pokemon.types}
 									/>
-								</li>
+								</div>
 							);
 						}
 					 )	
