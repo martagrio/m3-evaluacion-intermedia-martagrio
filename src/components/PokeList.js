@@ -6,24 +6,22 @@ import './pokelist.css';
 class PokeList extends React.Component {
 	render() {
 		return(
-			<ol className="pokemons__list">
-				<li className="pokemon">
-					{this.props.pokemons
-						.map((pokemon, id) => {
-							return (
-								<div className="pokemon" key={id}>
-									<Pokemon
-										pic = {pokemon.url}
-										name = {pokemon.name}
-										type = {pokemon.types}
-									/>
-								</div>
-							);
-						}
-					 )	
+			<ul className="pokemons__list">
+				{this.props.pokemons
+					.map((pokemon, id) => {
+						return (
+							<li className="pokemon" key={id}>
+								<Pokemon
+									pic = {pokemon.url}
+									name = {pokemon.name}
+									type = {pokemon.types}
+								/>
+							</li>
+						);
 					}
-				</li>
-			</ol>
+					)	
+				}
+			</ul>
 		);
 	}
 }
