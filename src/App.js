@@ -12,7 +12,6 @@ class App extends React.Component {
 		}
   }
   render() {
-		console.log(pokemons[0].url);
     return (
       <div className="app">
         <h1 className="app__title">Mi lista de pokemons</h1>
