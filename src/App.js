@@ -9,46 +9,33 @@ class App extends React.Component {
 
 		this.state = {
 			pokemons: pokemons,
-			favs: []
+			favs: [1,2,3,4,5,6,7,8,9]
 		}
-
 		this.markFav = this.markFav.bind(this);
   }
 
-/* 	markFav (event) {
-		const fav = parseInt(event.currentTarget);
-		this.setState(prevState => {
-			return (
-				favs: {...prevState.favs, 
-				[id]: fav}
-			)
-		}
-		)
-	} */
 	  markFav(event) {
-    const favID = parseInt(event.currentTarget.id);
+		const favID = parseInt(event.currentTarget.id);
 		console.log(favID);
-    
-/* 		const fav = this.state.favs(item => item === favID);
+		const checkFav = this.state.favs.find(item => item.id === favID);
 
     this.setState(prevState => {
-      const newFavs = [...prevState.favs];
-   
-      const result = newFavs.findIndex(item => item.show.id === favID);
+      const saveFavs = [...prevState.favs];
+      const result = saveFavs.findIndex(item => item.id === favID);
 
       if (result < 0 ) {
         // Si no existe, adentro
-        newFavs.push(futureFav);
+        saveFavs.push(checkFav);
       } else {
         // Si existe en favs, lo borramos
-        newFavs.splice(result,1);
+        saveFavs.splice(result,1);
       }
-      localStorage.setItem('favs', JSON.stringify(newFavs));
-
+      /* localStorage.setItem('favs', JSON.stringify(newFavs)); */ 
       return {
-        favs: newFavs
+        favs: saveFavs
       }
-    }); */
+    });
+
   }
 
   render() {
