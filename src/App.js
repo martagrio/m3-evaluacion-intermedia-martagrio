@@ -15,11 +15,41 @@ class App extends React.Component {
 		this.markFav = this.markFav.bind(this);
   }
 
-	markFav (event) {
+/* 	markFav (event) {
 		const fav = parseInt(event.currentTarget);
+		this.setState(prevState => {
+			return (
+				favs: {...prevState.favs, 
+				[id]: fav}
+			)
+		}
+		)
+	} */
+	  markFav(event) {
+    const favID = parseInt(event.currentTarget.id);
+		console.log(favID);
+    
+/* 		const fav = this.state.favs(item => item === favID);
 
-		this.setState({favs: fav.id});
-	}
+    this.setState(prevState => {
+      const newFavs = [...prevState.favs];
+   
+      const result = newFavs.findIndex(item => item.show.id === favID);
+
+      if (result < 0 ) {
+        // Si no existe, adentro
+        newFavs.push(futureFav);
+      } else {
+        // Si existe en favs, lo borramos
+        newFavs.splice(result,1);
+      }
+      localStorage.setItem('favs', JSON.stringify(newFavs));
+
+      return {
+        favs: newFavs
+      }
+    }); */
+  }
 
   render() {
     return (
