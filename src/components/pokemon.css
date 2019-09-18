@@ -44,4 +44,9 @@
 
 .fav {
 	background-color: rgb(201, 176, 224);
+	transition: all 1.2s ease-in-out 0s;
+}
+
+.fav:hover {
+    transform:rotateY(360deg);
 }

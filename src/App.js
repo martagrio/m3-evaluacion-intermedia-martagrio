@@ -16,14 +16,12 @@ class App extends React.Component {
 
 	  markFav(event) {
 		const favID = parseInt(event.currentTarget.id);
-		console.log(favID);
 		const checkFav = this.state.pokemons.find(item => item.id === favID);
 
     this.setState(prevState => {
       const saveFavs = [...prevState.favs];
-			console.log(saveFavs);
       const result = saveFavs.findIndex(item => item.id === favID);
-			console.log(result);
+
       if (result < 0 ) {
         saveFavs.push(checkFav);
       } else {
