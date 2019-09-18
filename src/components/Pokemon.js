@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './pokemon.css';
 
 class Pokemon extends React.Component {
+
+
 	render() {
 		return(
 			<div className="card-pokemon" onClick={this.props.markFav} id={(this.props.id + 1)}>
@@ -25,7 +27,7 @@ Pokemon.propTypes = {
 	name: PropTypes.string,
 	type: PropTypes.arrayOf(PropTypes.string),
 	markFav: PropTypes.func,
-	favs: PropTypes.arrayOf(PropTypes.number),
+	favs: PropTypes.arrayOf(PropTypes.object),
 	id: PropTypes.number
 }
 

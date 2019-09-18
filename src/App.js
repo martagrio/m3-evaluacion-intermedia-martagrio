@@ -9,7 +9,7 @@ class App extends React.Component {
 
 		this.state = {
 			pokemons: pokemons,
-			favs: [1,2,3,4,5,6,7,8,9]
+			favs: []
 		}
 		this.markFav = this.markFav.bind(this);
   }
@@ -17,20 +17,17 @@ class App extends React.Component {
 	  markFav(event) {
 		const favID = parseInt(event.currentTarget.id);
 		console.log(favID);
-		const checkFav = this.state.favs.find(item => item.id === favID);
+		const checkFav = this.state.pokemons.find(item => item.id === favID);
 
     this.setState(prevState => {
       const saveFavs = [...prevState.favs];
       const result = saveFavs.findIndex(item => item.id === favID);
 
       if (result < 0 ) {
-        // Si no existe, adentro
         saveFavs.push(checkFav);
       } else {
-        // Si existe en favs, lo borramos
         saveFavs.splice(result,1);
       }
-      /* localStorage.setItem('favs', JSON.stringify(newFavs)); */ 
       return {
         favs: saveFavs
       }

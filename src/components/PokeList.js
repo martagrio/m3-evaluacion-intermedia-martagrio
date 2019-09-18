@@ -32,7 +32,7 @@ class PokeList extends React.Component {
 PokeList.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.object),
 	markFav: PropTypes.func,
-	favs: PropTypes.arrayOf(PropTypes.number),
+	favs: PropTypes.arrayOf(PropTypes.object),
 	id: PropTypes.number
 }
 
