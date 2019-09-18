@@ -4,10 +4,23 @@ import './pokemon.css';
 
 class Pokemon extends React.Component {
 
-
+	  isFav(id) {
+    const savedFav = this.props.favs;
+    if (savedFav.length > 0) {
+      const item = savedFav.findIndex(item => parseInt(item.id) === id);
+      if (item < 0) {
+        return '';
+      } else {
+        return 'fav';
+      }
+    } else {
+      return '';
+    }
+  }; 
+    
 	render() {
 		return(
-			<div className="card-pokemon" onClick={this.props.markFav} id={(this.props.id + 1)}>
+			<div className={`card-pokemon ${this.isFav(this.props.id + 1)}`} onClick={this.props.markFav} id={(this.props.id + 1)}>
 				<img src={this.props.pic} alt={this.props.name} className="card-pokemon-img"/>
 				<h2 className="card-pokemon__name">{this.props.name}</h2>
 				<ul className="card-pokemon__types">

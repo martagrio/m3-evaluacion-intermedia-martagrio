@@ -21,8 +21,9 @@ class App extends React.Component {
 
     this.setState(prevState => {
       const saveFavs = [...prevState.favs];
+			console.log(saveFavs);
       const result = saveFavs.findIndex(item => item.id === favID);
-
+			console.log(result);
       if (result < 0 ) {
         saveFavs.push(checkFav);
       } else {
