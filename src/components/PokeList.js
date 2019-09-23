@@ -8,16 +8,16 @@ class PokeList extends React.Component {
 		return(
 			<ul className="pokemons__list">
 				{this.props.pokemons
-					.map((pokemon, id) => {
+					.map((pokemon) => {
 						return (
-							<li className="pokemon" key={id} id={id}>
+							<li className="pokemon" key={pokemon.id} id={pokemon.id}>
 								<Pokemon
 									pic = {pokemon.url}
 									name = {pokemon.name}
 									type = {pokemon.types}
 									favs = {this.props.favs}
 									markFav = {this.props.markFav}
-									id = {id}
+									id = {pokemon.id}
 								/>
 							</li>
 						);
@@ -30,10 +30,9 @@ class PokeList extends React.Component {
 }
 
 PokeList.propTypes = {
-  pokemons: PropTypes.arrayOf(PropTypes.object),
-	markFav: PropTypes.func,
-	favs: PropTypes.arrayOf(PropTypes.object),
-	id: PropTypes.number
+  pokemons: PropTypes.arrayOf(PropTypes.object).isRequired,
+	markFav: PropTypes.func.isRequired,
+	favs: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default PokeList;
