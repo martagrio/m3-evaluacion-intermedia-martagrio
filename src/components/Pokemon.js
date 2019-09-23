@@ -20,7 +20,7 @@ class Pokemon extends React.Component {
     
 	render() {
 		return(
-			<div className={`card-pokemon ${this.isFav(this.props.id + 1)}`} onClick={this.props.markFav} id={(this.props.id + 1)}>
+			<div className={`card-pokemon ${this.isFav(this.props.id)}`} onClick={this.props.markFav} id={(this.props.id)}>
 				<img src={this.props.pic} alt={this.props.name} className="card-pokemon-img"/>
 				<h2 className="card-pokemon__name">{this.props.name}</h2>
 				<ul className="card-pokemon__types">
@@ -36,12 +36,12 @@ class Pokemon extends React.Component {
 }
 
 Pokemon.propTypes = {
-	pic: PropTypes.string,
-	name: PropTypes.string,
-	type: PropTypes.arrayOf(PropTypes.string),
-	markFav: PropTypes.func,
-	favs: PropTypes.arrayOf(PropTypes.object),
-	id: PropTypes.number
+	pic: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	type: PropTypes.arrayOf(PropTypes.string).isRequired,
+	id: PropTypes.number.isRequired,
+	markFav: PropTypes.func.isRequired,
+	favs: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default Pokemon;
