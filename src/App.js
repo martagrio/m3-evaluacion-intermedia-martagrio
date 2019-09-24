@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
 	  markFav(event) {
-		const favID = parseInt(event.currentTarget.id);
+		const favID = parseInt(event.currentTarget.dataset.id);
 		const checkFav = this.state.pokemons.find(item => item.id === favID);
 
     this.setState(prevState => {

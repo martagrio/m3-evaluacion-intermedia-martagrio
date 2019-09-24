@@ -10,7 +10,7 @@ class PokeList extends React.Component {
 				{this.props.pokemons
 					.map((pokemon) => {
 						return (
-							<li className="pokemon" key={pokemon.id} id={pokemon.id}>
+							<li className="pokemon" key={pokemon.id}>
 								<Pokemon
 									pic = {pokemon.url}
 									name = {pokemon.name}

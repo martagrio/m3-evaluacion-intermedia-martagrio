@@ -20,7 +20,7 @@ class Pokemon extends React.Component {
     
 	render() {
 		return(
-			<div className={`card-pokemon ${this.isFav(this.props.id)}`} onClick={this.props.markFav} id={(this.props.id)}>
+			<div className={`card-pokemon ${this.isFav(this.props.id)}`} onClick={this.props.markFav} 			data-id={(this.props.id)}>
 				<img src={this.props.pic} alt={this.props.name} className="card-pokemon-img"/>
 				<h2 className="card-pokemon__name">{this.props.name}</h2>
 				<ul className="card-pokemon__types">
